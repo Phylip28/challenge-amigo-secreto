@@ -1,20 +1,18 @@
 let listaDeNombres = [];
-let ingresarNombre = "";
 let indiceGanador = "";
 
 function agregarNombres(nombre) {
     return listaDeNombres.push(nombre);
 }
 
-function validarNombre(nombre) {
-    let Aprobado = True;
+function validarNombre() {
+    let nombreIngresado = document.getElementById('amigo').value;
     
-    if (nombre == ""){
-        alert("Por favor ingrese un nombre valido");
-        return Aprobado = false;
+    if (nombreIngresado == ""){
+        alert("Por favor agregue un nombre valido");
+    } else {
+        agregarNombres(nombreIngresado);
     }
-
-    return Aprobado;
 }
 
 function verLista() {
@@ -34,5 +32,5 @@ function asignarTextoElemento(elemento, texto) {
     let elementoHtml = document.querySelector(elemento);
     elementoHtml.innerHtml = texto;
     
-    return 
+    return;
 }
