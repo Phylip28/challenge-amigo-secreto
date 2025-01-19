@@ -29,10 +29,10 @@ function sortearNombre(lista) {
         return listaDeNombres[indiceGanador];
     }
 }
-/*
 
-4. Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se
-    seleccionará aleatoriamente un nombre de la lista y se mostrará en la 
-    página.
-
-*/
+function asignarTextoElemento(elemento, texto) {
+    let elementoHtml = document.querySelector(elemento);
+    elementoHtml.innerHtml = texto;
+    
+    return 
+}
