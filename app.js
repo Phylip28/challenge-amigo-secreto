@@ -14,3 +14,11 @@
     seleccionará aleatoriamente un nombre de la lista y se mostrará en la 
     página.
 */
+
+let nombres = [];
+let ingresarNombre = "";
+
+function agregarNombres(nombre) {
+    return nombres.push(nombre);
+}
+
