@@ -88,8 +88,12 @@ body {
 }
 
 .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
     width: 300px;
-    justify-content: center;
+    max-width: 400px;
+    margin-top: 20px;
 }
 
 /* Estilos de entrada de texto */
@@ -159,4 +163,8 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.button-draw:disabled {
+    background: #898989;
 }
