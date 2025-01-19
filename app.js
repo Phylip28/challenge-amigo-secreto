@@ -1,19 +1,16 @@
 /* 
     Funciones
-
-    3. Visualizar la lista: Los nombres ingresados aparecerán en una lista
-    debajo del campo de entrada.
-
+    
     4. Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se
     seleccionará aleatoriamente un nombre de la lista y se mostrará en la 
     página.
 */
 
-let nombres = [];
+let listaDeNombres = [];
 let ingresarNombre = "";
 
 function agregarNombres(nombre) {
-    return nombres.push(nombre);
+    return listaDeNombres.push(nombre);
 }
 
 function validarNombre(nombre) {
@@ -27,7 +24,12 @@ function validarNombre(nombre) {
     return Aprobado;
 }
 
+function verLista() {
+    return listaDeNombres;
+}
 /*
-2. Validar entrada: Si el campo de texto está vacío, 
-    el programa mostrará una alerta pidiendo un nombre válido.
+
+3. Visualizar la lista: Los nombres ingresados aparecerán en una lista
+debajo del campo de entrada.
+
 */
