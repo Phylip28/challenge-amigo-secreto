@@ -1,11 +1,5 @@
 /* 
     Funciones
-    1. Agregar nombres: Los usuarios escribirán el nombre de 
-    un amigo en un campo de texto y lo agregarán a una lista
-    visible al hacer clic en "Adicionar".
-
-    2. Validar entrada: Si el campo de texto está vacío, 
-    el programa mostrará una alerta pidiendo un nombre válido.
 
     3. Visualizar la lista: Los nombres ingresados aparecerán en una lista
     debajo del campo de entrada.
@@ -22,3 +16,18 @@ function agregarNombres(nombre) {
     return nombres.push(nombre);
 }
 
+function validarNombre(nombre) {
+    let Aprobado = True;
+    
+    if (nombre == ""){
+        alert("Por favor ingrese un nombre valido");
+        return Aprobado = false;
+    }
+
+    return Aprobado;
+}
+
+/*
+2. Validar entrada: Si el campo de texto está vacío, 
+    el programa mostrará una alerta pidiendo un nombre válido.
+*/
