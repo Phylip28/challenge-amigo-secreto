@@ -41,7 +41,7 @@ challenge-amigo-secreto/
 - CSS
 - JavaScript
 
-## 📷 Captura de Pantalla
+## 📷 Vista Previa
 
 ![Vista previa del proyecto](img/preview.png)
 
