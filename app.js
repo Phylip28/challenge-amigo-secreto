@@ -14,6 +14,7 @@ function validarNombre() {
         return false;
     } else {
         agregarNombres(nombreIngresado);
+        verLista();
 
         if (listaDeNombres.length > 1){
             document.querySelector('#boton-sorteo').removeAttribute('disabled');
@@ -24,7 +25,15 @@ function validarNombre() {
 }
 
 function verLista() {
-    return listaDeNombres;
+    let nombresEnLista = document.getElementById('listaAmigos');
+    nombresEnLista.innerHTML = "";
+
+    for (let nombres = 0; nombres < listaDeNombres.length; nombres++){
+        let mostrarNombre = document.createElement('li');
+        
+        mostrarNombre.innerHTML = listaDeNombres[nombres];
+        nombresEnLista.appendChild(mostrarNombre);   
+    }
 }
 
 function sortearNombre() {
