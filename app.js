@@ -2,19 +2,24 @@ let listaDeNombres = [];
 let indiceGanador = "";
 
 function agregarNombres(nombre) {
-    return listaDeNombres.push(nombre);
+    listaDeNombres.push(nombre);
+    document.getElementById('amigo').value = "";
 }
 
 function validarNombre() {
     let nombreIngresado = document.getElementById('amigo').value;
     
-    if (nombreIngresado == ""){
+    if (nombreIngresado === ""){
         alert("Por favor agregue un nombre valido");
+        return false;
     } else {
+        agregarNombres(nombreIngresado);
+
         if (listaDeNombres.length > 1){
             document.querySelector('#boton-sorteo').removeAttribute('disabled');
         }
-        return agregarNombres(nombreIngresado);
+        console.log(listaDeNombres);
+        return true;
     }
 }
 
@@ -23,16 +28,11 @@ function verLista() {
 }
 
 function sortearNombre() {
-
-    if (listaDeNombres.length >= 1){
-        indiceGanador = Math.floor(Math.random()*lista.length);
-        return listaDeNombres[indiceGanador];
-    } 
+    indiceGanador = Math.floor(Math.random()*lista.length);
+    return listaDeNombres[indiceGanador];
 }
 
 function asignarTextoElemento(elemento, texto) {
     let elementoHtml = document.querySelector(elemento);
-    elementoHtml.innerHtml = texto;
-    
-    return;
+    elementoHtml.innerHTML = texto;
 }
