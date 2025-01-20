@@ -17,7 +17,7 @@ function validarNombre() {
         verLista();
 
         if (listaDeNombres.length > 1){
-            document.querySelector('#boton-sorteo').removeAttribute('disabled');
+            document.getElementById('boton-sortear').removeAttribute('disabled');
         }
         return true;
     }
@@ -65,5 +65,8 @@ function reiniciarSorteo() {
     listaDeNombres = [];
     indiceGanador = "";
     limpiarEntrada();
-
+    document.getElementById('boton-reiniciar').setAttribute('disabled', true);
+    document.getElementById('boton-sortear').setAttribute('disabled', true);
+    asignarTextoElementosId('listaAmigos',"");
+    asignarTextoElementosId('resultado',"");
 }
