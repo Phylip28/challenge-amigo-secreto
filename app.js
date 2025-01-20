@@ -37,8 +37,14 @@ function verLista() {
 }
 
 function sortearNombre() {
-    indiceGanador = Math.floor(Math.random()*lista.length);
-    return listaDeNombres[indiceGanador];
+    indiceGanador = Math.floor(Math.random()*listaDeNombres.length);
+
+    let ganador = document.getElementById('resultado');
+    ganador.innerHTML = ""; 
+
+    let listarGanador = document.createElement('li');
+    listarGanador.innerHTML = listaDeNombres[indiceGanador];
+    ganador.appendChild(listarGanador);
 }
 
 function asignarTextoElemento(elemento, texto) {
