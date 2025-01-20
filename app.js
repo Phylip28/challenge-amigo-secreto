@@ -37,7 +37,7 @@ function sortearNombre() {
     let ganador = asignarTextoElementosId('resultado',"");
     
     indiceGanador = Math.floor(Math.random()*listaDeNombres.length);
-    let listarGanador = crearElementos('li',listaDeNombres[indiceGanador]);
+    let listarGanador = crearElementos('li',`El amigo secreto sorteado es: ${listaDeNombres[indiceGanador]}`);
     
     ganador.appendChild(listarGanador);
     document.getElementById('boton-reiniciar').removeAttribute('disabled');
