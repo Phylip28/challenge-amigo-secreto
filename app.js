@@ -11,7 +11,10 @@ function validarNombre() {
     if (nombreIngresado == ""){
         alert("Por favor agregue un nombre valido");
     } else {
-        agregarNombres(nombreIngresado);
+        if (listaDeNombres.length > 1){
+            document.querySelector('#boton-sorteo').removeAttribute('disabled');
+        }
+        return agregarNombres(nombreIngresado);
     }
 }
 
@@ -19,13 +22,12 @@ function verLista() {
     return listaDeNombres;
 }
 
-function sortearNombre(lista) {
-    if (lista.length == 0){
-        return alert("");
-    } else {
+function sortearNombre() {
+
+    if (listaDeNombres.length >= 1){
         indiceGanador = Math.floor(Math.random()*lista.length);
         return listaDeNombres[indiceGanador];
-    }
+    } 
 }
 
 function asignarTextoElemento(elemento, texto) {
