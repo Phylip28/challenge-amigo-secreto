@@ -28,7 +28,7 @@ function verLista() {
     let nombresEnLista = asignarTextoElementosId('listaAmigos',"");
 
     for (let nombres = 0; nombres < listaDeNombres.length; nombres++){
-        mostrarNombre = crearElementos('li',listaDeNombres[nombres]);
+        let mostrarNombre = crearElementos('li',listaDeNombres[nombres]);
         nombresEnLista.appendChild(mostrarNombre);   
     }
 }
@@ -37,22 +37,22 @@ function sortearNombre() {
     let ganador = asignarTextoElementosId('resultado',"");
     
     indiceGanador = Math.floor(Math.random()*listaDeNombres.length);
-    listarGanador = crearElementos('li',listaDeNombres[indiceGanador]);
+    let listarGanador = crearElementos('li',listaDeNombres[indiceGanador]);
+    
     ganador.appendChild(listarGanador);
-
     document.getElementById('boton-reiniciar').removeAttribute('disabled');
 }
 
 function asignarTextoElementosId(id, texto){
     let idElemento = document.getElementById(id);
-    idElemento.innerHTML = texto;
+    idElemento.textContent = texto;
 
     return idElemento;
 }
 
 function crearElementos(elemento, texto){
     let nuevoElemento = document.createElement(elemento);
-    nuevoElemento.innerHTML = texto;
+    nuevoElemento.textContent = texto;
 
     return nuevoElemento;
 }
