@@ -3,7 +3,7 @@ let indiceGanador = "";
 
 function agregarNombres(nombre) {
     listaDeNombres.push(nombre);
-    document.getElementById('amigo').value = "";
+    limpiarEntrada();
 }
 
 function validarNombre() {
@@ -19,35 +19,51 @@ function validarNombre() {
         if (listaDeNombres.length > 1){
             document.querySelector('#boton-sorteo').removeAttribute('disabled');
         }
-        console.log(listaDeNombres);
         return true;
     }
 }
 
 function verLista() {
-    let nombresEnLista = document.getElementById('listaAmigos');
-    nombresEnLista.innerHTML = "";
+
+    let nombresEnLista = asignarTextoElementosId('listaAmigos',"");
 
     for (let nombres = 0; nombres < listaDeNombres.length; nombres++){
-        let mostrarNombre = document.createElement('li');
-        
-        mostrarNombre.innerHTML = listaDeNombres[nombres];
+        mostrarNombre = crearElementos('li',listaDeNombres[nombres]);
         nombresEnLista.appendChild(mostrarNombre);   
     }
 }
 
 function sortearNombre() {
+    let ganador = asignarTextoElementosId('resultado',"");
+    
     indiceGanador = Math.floor(Math.random()*listaDeNombres.length);
-
-    let ganador = document.getElementById('resultado');
-    ganador.innerHTML = ""; 
-
-    let listarGanador = document.createElement('li');
-    listarGanador.innerHTML = listaDeNombres[indiceGanador];
+    listarGanador = crearElementos('li',listaDeNombres[indiceGanador]);
     ganador.appendChild(listarGanador);
+
+    document.getElementById('boton-reiniciar').removeAttribute('disabled');
 }
 
-function asignarTextoElemento(elemento, texto) {
-    let elementoHtml = document.querySelector(elemento);
-    elementoHtml.innerHTML = texto;
+function asignarTextoElementosId(id, texto){
+    let idElemento = document.getElementById(id);
+    idElemento.innerHTML = texto;
+
+    return idElemento;
+}
+
+function crearElementos(elemento, texto){
+    let nuevoElemento = document.createElement(elemento);
+    nuevoElemento.innerHTML = texto;
+
+    return nuevoElemento;
+}
+
+function limpiarEntrada(){
+    document.getElementById('amigo').value = "";
+}
+
+function reiniciarSorteo() {
+    listaDeNombres = [];
+    indiceGanador = "";
+    limpiarEntrada();
+
 }
